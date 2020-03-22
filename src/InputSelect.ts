@@ -41,6 +41,7 @@ const template = `
   </div>
 `
 
+import Multiselect from 'vue-multiselect'
 import { plainToClassFromExist } from 'class-transformer'
 import { Component, Prop, Watch, Vue, Inject } from 'vue-property-decorator'
 
@@ -49,7 +50,10 @@ type InputItems = Array<IResource | null>
 
 const build = ($id: number, $tag: string) => ({ $id, $tag } as IResource)
 
-@Component({ template })
+@Component({
+  template,
+  components: { Multiselect },
+})
 export class InputSelect extends Vue {
   @Prop({ type: String })
   label?: string

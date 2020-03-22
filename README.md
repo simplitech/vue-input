@@ -4,7 +4,7 @@ Vue Input with multiple functionality
 
 # Install
 ```
-npm i @simpli/vue-input moment class-transformer
+npm i @simpli/vue-input moment class-transformer vue-multiselect
 ```
 
 ## Import
