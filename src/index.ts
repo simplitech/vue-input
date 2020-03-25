@@ -3,6 +3,7 @@ import { InputCheckbox } from './InputCheckbox'
 import { InputDate } from './InputDate'
 import { InputSelect } from './InputSelect'
 import { InputText } from './InputText'
+import { InputType } from './InputType'
 import { MaskPatternConfig } from './MaskPatternConfig'
 
 let InputMaskPatterns: MaskPatternConfig = {
@@ -32,4 +33,4 @@ export default class ModalWrapper {
   }
 }
 
-export { InputCheckbox, InputDate, InputSelect, InputText, InputMaskPatterns, MaskPatternConfig }
+export { InputCheckbox, InputDate, InputSelect, InputText, InputType, InputMaskPatterns, MaskPatternConfig }
