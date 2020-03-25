@@ -1,4 +1,6 @@
+$primary-color: #2a2a2a !default;
 $danger-color: #ff2424 !default;
+@import "~vue-multiselect/dist/vue-multiselect.min.css";
 
 .input-group {
   .input-group__label{
@@ -64,4 +66,139 @@ $danger-color: #ff2424 !default;
     display: none;
     -webkit-appearance: none;
   }
+
+  .multiselect {
+    color: rgba(0, 0, 0, 0.7);
+    min-height: unset !important;
+
+    .multiselect__select {
+      height: 35px;
+      top: auto;
+      bottom: 0;
+      padding: 0px 8px;
+    }
+
+    .multiselect__tags {
+      color: rgba(0, 0, 0, 0.7);
+      border: none;
+      padding: 0;
+      min-height: 35px;
+      background: transparent;
+
+      .multiselect__tags-wrap {
+        .multiselect__tag {
+          margin: 4px 4px 0 4px;
+        }
+      }
+
+      .multiselect__input {
+        width: 100% !important;
+        position: static !important;
+        padding: 0 8px !important;
+        display: block;
+        margin: 0;
+        background: transparent;
+      }
+
+      .multiselect__single {
+        &:empty {
+          background: none;
+        }
+
+        color: white;
+        background: $primary-color;
+        position: absolute;
+        top: 4px;
+        bottom: 4px;
+        left: 4px;
+        width: calc(100% - 50px);
+        line-height: 27px;
+        height: 27px;
+        padding: 0 8px;
+        margin: 0;
+        border: none;
+        outline: none;
+        font-size: 16px;
+      }
+
+      .multiselect__tag {
+        background: $primary-color !important;
+
+        .multiselect__tag-icon {
+          margin: 2px;
+          line-height: 20px;
+
+          &:hover {
+            background: $primary-color;
+            opacity: .65;
+          }
+
+          &:after {
+            color: white !important;
+          }
+        }
+      }
+
+      .multiselect__placeholder {
+        display: none;
+      }
+    }
+
+    .multiselect__content-wrapper {
+      overflow-y: auto;
+      overflow-x: hidden;
+      border-radius: 8px !important;
+      padding: 0;
+      border: none;
+      box-shadow: 0 0 12px rgba(0, 0, 0, 0.3);
+
+      &::-webkit-scrollbar {
+        height: 15px;
+        width: 15px;
+      }
+
+      &::-webkit-scrollbar-track {
+        background: #eeeef7;
+        border-radius: 0 6px 6px 0;
+      }
+
+      &::-webkit-scrollbar-thumb {
+        background: $primary-color;
+        border: solid 3px #eeeef7;
+        border-radius: 10px;
+      }
+
+      ul.multiselect__content {
+        li.multiselect__element {
+          .multiselect__option {
+            background: white;
+            color: rgba(0, 0, 0, 0.7);
+
+            &.multiselect__option--highlight {
+              transition: all 100ms ease-in-out;
+              background: $primary-color;
+              opacity: .7;
+            }
+
+            &.multiselect__option--selected {
+              transition: all 100ms ease-in-out;
+              background: $primary-color;
+            }
+
+            &:hover {
+              background: $primary-color;
+              opacity: .7;
+            }
+
+            &:after {
+              color: rgba(0, 0, 0, 0.4);
+              background: none;
+            }
+          }
+        }
+      }
+
+    }
+  }
+
 }
