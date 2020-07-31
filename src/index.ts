@@ -26,10 +26,10 @@ export default class ModalWrapper {
       InputMaskPatterns = maskPatterns
     }
 
-    Vue.component(InputCheckbox.name, InputCheckbox)
-    Vue.component(InputDate.name, InputDate)
-    Vue.component(InputSelect.name, InputSelect)
-    Vue.component(InputText.name, InputText)
+    Vue.component('InputCheckbox', InputCheckbox)
+    Vue.component('InputDate', InputDate)
+    Vue.component('InputSelect', InputSelect)
+    Vue.component('InputText', InputText)
   }
 }
 
