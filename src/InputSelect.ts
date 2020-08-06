@@ -112,6 +112,9 @@ export class InputSelect extends Vue {
   @Inject({ from: 'validator', default: null })
   validator: any
 
+  @Prop({type: Boolean, default: false})
+  simpleCompute!: boolean
+
   readonly emptyResource = build(0, '')
 
   model: IResource | IResource[] = []
@@ -153,6 +156,10 @@ export class InputSelect extends Vue {
   }
 
   get computedModel() {
+    if (this.simpleCompute) {
+      return this.value || null
+    }
+
     const model = this.model
     const options = this.options.filter((item: IResource | null) => !!item) as IResource[]
 
@@ -170,6 +177,11 @@ export class InputSelect extends Vue {
   }
 
   set computedModel(val: InputModel) {
+    if (this.simpleCompute) {
+      this.$emit('input', val)
+      return
+    }
+
     this.model = val || this.emptyResource
     const options = this.options.filter((item: IResource | null) => !!item) as IResource[]
 
