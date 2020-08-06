@@ -112,7 +112,7 @@ export class InputSelect extends Vue {
   @Inject({ from: 'validator', default: null })
   validator: any
 
-  @Prop({type: Boolean, default: false})
+  @Prop({ type: Boolean, default: false })
   simpleCompute!: boolean
 
   readonly emptyResource = build(0, '')
