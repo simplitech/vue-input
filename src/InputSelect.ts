@@ -24,8 +24,8 @@ const template = `
                  :multiple="isMultiple"
                  :taggable="isTaggable"
                  :disabled="isDisabled"
-                 :close-on-select="isCloseOnSelect"
-                 :hide-selected="isHideSelected"
+                 :close-on-select="closeOnSelect !== undefined ? closeOnSelect : isCloseOnSelect"
+                 :hide-selected="hideSelected !== undefined ? hideSelected : isHideSelected"
                  :class="inputClass"
                  class="input-group__input"
                  @tag="tagEvent"
@@ -34,7 +34,7 @@ const template = `
       <div slot="noResult">{{ noResultLabel || $t('app.noResultFound') }}</div>
       <div slot="noOptions">{{ noOptionsLabel || $t('app.emptyList') }}</div>
     </multiselect>
-    
+
     <transition name="slide">
       <div class="input-group__error-message" v-if="isInvalid">{{ errors.first(label) }}</div>
     </transition>
@@ -72,6 +72,12 @@ export class InputSelect extends Vue {
 
   @Prop({ type: Boolean })
   disabled?: boolean
+
+  @Prop({ type: Boolean })
+  closeOnSelect?: boolean
+
+  @Prop({ type: Boolean })
+  hideSelected?: boolean
 
   @Prop({ type: String, default: '$id' })
   idKey!: string
