@@ -2,6 +2,15 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.0.9](https://github.com/simplitech/vue-input/compare/v1.0.8...v1.0.9) (2020-08-17)
+
+
+### Bug Fixes
+
+* Fixed issue ([7fbd14a](https://github.com/simplitech/vue-input/commit/7fbd14a))
+
+
+
 ## [1.0.8](https://github.com/simplitech/vue-input/compare/v1.0.7...v1.0.8) (2020-08-17)
 
 
