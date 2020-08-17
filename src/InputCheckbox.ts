@@ -3,6 +3,7 @@ const template = `
     <input
       :id="\`input-checkbox\${_uid}\`"
       :type="radio ? 'radio' : 'checkbox'"
+      :value="computedValue"
       v-model="computedModel"
       v-bind="vBind"
       v-on="vOn"
@@ -39,6 +40,9 @@ export class InputCheckbox extends Vue {
   @Prop({ type: Boolean })
   radio?: boolean
 
+  @Prop({ default: null })
+  radioValue!: any | null
+
   get vBind() {
     return { ...this.$attrs }
   }
@@ -47,6 +51,10 @@ export class InputCheckbox extends Vue {
     const listeners = { ...this.$listeners }
     delete listeners.input
     return { ...listeners }
+  }
+
+  get computedValue() {
+    return this.radioValue !== null ? this.radioValue : undefined
   }
 
   get computedModel() {
