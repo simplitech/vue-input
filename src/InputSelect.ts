@@ -24,8 +24,8 @@ const template = `
                  :multiple="isMultiple"
                  :taggable="isTaggable"
                  :disabled="isDisabled"
-                 :close-on-select="closeOnSelect !== undefined ? closeOnSelect : isCloseOnSelect"
-                 :hide-selected="hideSelected !== undefined ? hideSelected : isHideSelected"
+                 :close-on-select="isCloseOnSelect"
+                 :hide-selected="isHideSelected"
                  :class="inputClass"
                  class="input-group__input"
                  @tag="tagEvent"
@@ -73,11 +73,11 @@ export class InputSelect extends Vue {
   @Prop({ type: Boolean })
   disabled?: boolean
 
-  @Prop({ type: Boolean })
-  closeOnSelect?: boolean
+  @Prop({ type: Boolean, default: null })
+  closeOnSelect!: boolean | null
 
-  @Prop({ type: Boolean })
-  hideSelected?: boolean
+  @Prop({ type: Boolean, default: null })
+  hideSelected!: boolean | null
 
   @Prop({ type: String, default: '$id' })
   idKey!: string
@@ -227,11 +227,11 @@ export class InputSelect extends Vue {
   }
 
   get isCloseOnSelect() {
-    return !this.isMultipleNotTaggable
+    return this.closeOnSelect !== null ? this.closeOnSelect : !this.isMultipleNotTaggable
   }
 
   get isHideSelected() {
-    return this.isMultipleNotTaggable
+    return this.hideSelected !== null ? this.hideSelected : this.isMultipleNotTaggable
   }
 
   created() {
