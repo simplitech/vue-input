@@ -2,6 +2,20 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+# [2.0.0](https://github.com/simplitech/vue-input/compare/v1.0.9...v2.0.0) (2020-09-21)
+
+
+### Bug Fixes
+
+* **InputCheckbox:** Simplifying html structure ([cee4c47](https://github.com/simplitech/vue-input/commit/cee4c47))
+
+
+### BREAKING CHANGES
+
+* **InputCheckbox:** html structure changed, it might break style customizations
+
+
+
 ## [1.0.9](https://github.com/simplitech/vue-input/compare/v1.0.8...v1.0.9) (2020-08-17)
 
 
