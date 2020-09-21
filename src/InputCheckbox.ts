@@ -12,12 +12,10 @@ const template = `
       @focus="focusEvent"
       @blur="blurEvent"
     />
-    <span class="input-group__label" :class="labelClass">
-      <label :for="\`input-checkbox\${_uid}\`" >
-        {{ label }}
-        <slot></slot>
-      </label>
-    </span>
+    <label class="input-group__label" :class="labelClass" :for="\`input-checkbox\${_uid}\`">
+      {{ label }}
+      <slot></slot>
+    </label>
   </div>
 `
 
