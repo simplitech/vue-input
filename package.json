@@ -1,6 +1,6 @@
 {
   "name": "@simpli/vue-input",
-  "version": "2.0.1",
+  "version": "2.1.0",
   "description": "Vue Input with multiple functionality",
   "keywords": [],
   "main": "lib/index.js",
