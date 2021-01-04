@@ -31,6 +31,9 @@ const template = `
                  @tag="tagEvent"
                  @remove="removeEvent"
     >
+      <template slot="tag" slot-scope="{option, remove}">
+        <slot name="tag" :option="option" :remove="remove"></slot>
+      </template>
       <div slot="noResult">{{ noResultLabel || $t('app.noResultFound') }}</div>
       <div slot="noOptions">{{ noOptionsLabel || $t('app.emptyList') }}</div>
     </multiselect>
