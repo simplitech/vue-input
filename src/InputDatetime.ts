@@ -94,9 +94,11 @@ export class InputDateTime extends Vue {
 
     const datetime = this.datetimeFromInput(val)
 
+    if (!datetime) return
+
     const datetimeRequestFormat = moment(datetime).format()
 
-    if (datetime) this.$emit('input', datetimeRequestFormat)
+    this.$emit('input', datetimeRequestFormat)
   }
 
   get isInvalid() {
