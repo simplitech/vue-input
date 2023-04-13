@@ -70,7 +70,7 @@ const template = `
            :key="4"
     />
     <transition name="slide">
-      <div class="input-group__error-message" v-if="isInvalid">{{ errors.first(label) }}</div>
+      <div class="input-group__error-message" v-if="isInvalid">{{ errors.first(computedName) }}</div>
     </transition>
   </div>
 `
@@ -200,7 +200,7 @@ export class InputText extends Vue {
 
   get isInvalid() {
     // @ts-ignore
-    return this.preset.isValid === false || this.errors.first(this.label)
+    return this.preset.isValid === false || this.errors.first(this.computedName)
   }
 
   get computedName() {
