@@ -90,7 +90,10 @@ export class InputDateTime extends Vue {
   }
 
   set valueAsInput(val) {
-    if (!val) return
+    if (!val) {
+      this.emitEmpty()
+      return
+    }
 
     const datetime = this.datetimeFromInput(val)
 
