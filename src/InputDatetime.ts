@@ -29,7 +29,7 @@ const template = `
   </div>
 `
 
-import { Component, Prop, Vue, Model, Emit, Inject } from 'vue-property-decorator'
+import { Component, Prop, Vue, Inject } from 'vue-property-decorator'
 import moment from 'moment'
 
 @Component({ template })

@@ -132,9 +132,9 @@ export class InputText extends Vue {
   @Inject({ from: 'validator', default: null })
   validator: any
 
-  preset: MaskPresetConfig = new class extends MaskPresetConfig {
+  preset: MaskPresetConfig = new (class extends MaskPresetConfig {
     mask = []
-  }()
+  })()
 
   private static defaultPreset: Dictionary<ClassType<MaskPresetConfig>> = {
     date: DateMaskPreset,
@@ -159,9 +159,9 @@ export class InputText extends Vue {
         this.preset = new constructor()
       }
     } else {
-      this.preset = new class extends MaskPresetConfig {
+      this.preset = new (class extends MaskPresetConfig {
         mask = []
-      }()
+      })()
     }
   }
 
