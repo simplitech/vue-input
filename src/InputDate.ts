@@ -90,6 +90,7 @@ export class InputDate extends Vue {
 
   set valueAsInput(val) {
     if (!val) {
+      this.emitEmpty()
       return
     }
 
